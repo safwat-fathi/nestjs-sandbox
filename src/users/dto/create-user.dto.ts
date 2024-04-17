@@ -4,14 +4,14 @@ import {
   MinLength,
   IsAlphanumeric,
   IsString,
-  ValidateIf,
   NotEquals,
+  Length,
 } from 'class-validator';
 
 export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
-  @MinLength(3)
+  @Length(3, 30)
   @IsAlphanumeric()
   @NotEquals(null)
   name: string;
