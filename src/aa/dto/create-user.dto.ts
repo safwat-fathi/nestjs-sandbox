@@ -14,16 +14,16 @@ export class CreateUserDto {
   @Length(3, 30)
   @IsAlphanumeric()
   @NotEquals(null)
-  name: string;
+  readonly name: string;
 
   @IsNotEmpty()
   @IsEmail()
   @NotEquals(null)
-  email: string;
+  readonly email: string;
 
   @IsNotEmpty()
   @IsAlphanumeric()
   @MinLength(8)
   @NotEquals(null)
-  password: string;
+  readonly password: string;
 }

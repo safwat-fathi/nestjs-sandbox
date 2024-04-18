@@ -14,7 +14,8 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
-      // skipUndefinedProperties: true,
+      forbidNonWhitelisted: true,
+      // transform: true,
       exceptionFactory: (errors) => {
         const result = errors.map((error) => ({
           property: error.property,
